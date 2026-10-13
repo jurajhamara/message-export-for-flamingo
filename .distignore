@@ -1,0 +1,18 @@
+# Súbory a priečinky, ktoré sa NEMAJÚ posielať na WordPress.org.
+# Ide o vývojárske veci, ktoré patria na GitHub, ale nie do distribúcie.
+
+/.git
+/.github
+/.wordpress-org
+/node_modules
+/.claude
+/dev
+/dist
+
+/.distignore
+/.gitattributes
+/.gitignore
+/.editorconfig
+/README.md
+/CLAUDE.md
+/STAV-PROJEKTU.md

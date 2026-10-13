@@ -1,0 +1,28 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and temp
+*.log
+*.tmp
+
+# Build artifacts
+/build/
+/dist/
+*.zip
+
+# Pokyny pre asistenta a pracovné poznámky - len lokálne, nepatria do repa.
+# Repo je verejné a STAV-PROJEKTU.md opisuje web klientky.
+CLAUDE.md
+.claude/
+STAV-PROJEKTU.md

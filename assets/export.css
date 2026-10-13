@@ -1,0 +1,66 @@
+/* Export page. Core admin styles do most of the work, this only adds what they lack. */
+
+.meff-export .count {
+	color: #646970;
+}
+
+.meff-export .meff-dates {
+	display: inline-block;
+	margin-left: 0.5em;
+}
+
+.meff-export .meff-dates label {
+	margin: 0 0.25em !important;
+}
+
+.meff-export .meff-more {
+	margin-top: 1em;
+}
+
+.meff-export .meff-more summary {
+	cursor: pointer;
+	color: #2271b1;
+	font-weight: 600;
+}
+
+.meff-export .meff-more summary:hover {
+	color: #135e96;
+}
+
+.meff-export .meff-more .form-table {
+	margin-top: 0;
+}
+
+.meff-export .meff-spinner {
+	float: none;
+	margin: 0 0.5em;
+	vertical-align: middle;
+}
+
+.meff-export .meff-note {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.meff-export .meff-date {
+	white-space: nowrap;
+}
+
+/* On small screens each date goes on its own line, below Custom range. */
+@media screen and (max-width: 782px) {
+	.meff-export .meff-dates {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 0.5em;
+		align-items: center;
+		margin: 0.5em 0 0.5em 2.5em;
+	}
+
+	.meff-export .meff-date {
+		display: contents;
+	}
+
+	.meff-export .meff-dates label {
+		margin: 0 !important;
+	}
+}

@@ -1,0 +1,23 @@
+name: Deploy to WordPress.org
+
+# Spustí sa vždy, keď pushneš tag (napr. 1.0.0).
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  deploy:
+    name: Deploy to WordPress.org
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          # Repo sa volá rovnako ako slug, uvedené aj tak, keby sa repo premenovalo.
+          SLUG: message-export-for-flamingo

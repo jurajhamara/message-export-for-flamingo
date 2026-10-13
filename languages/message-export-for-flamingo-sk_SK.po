@@ -1,0 +1,208 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Message Export for Flamingo 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/message-export-for-flamingo\n"
+"Last-Translator: Juraj Hamara <mail@jurajhamara.sk>\n"
+"Language-Team: Juraj Hamara <mail@jurajhamara.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-13T08:41:47+00:00\n"
+"PO-Revision-Date: 2026-10-13T08:50:00+00:00\n"
+"Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: message-export-for-flamingo\n"
+
+#. Plugin Name of the plugin
+#: message-export-for-flamingo.php
+msgid "Message Export for Flamingo"
+msgstr "Message Export for Flamingo"
+
+#. Description of the plugin
+#: message-export-for-flamingo.php
+msgid "Export Contact Form 7 messages stored by Flamingo to an Excel file, filtered by form, date range, sender e-mail and text."
+msgstr "Export správ z Contact Form 7 uložených vo Flamingu do súboru Excel, s filtrami podľa formulára, obdobia, e-mailu odosielateľa a textu."
+
+#. Author of the plugin
+#: message-export-for-flamingo.php
+msgid "Juraj Hamara"
+msgstr "Juraj Hamara"
+
+#. Author URI of the plugin
+#: message-export-for-flamingo.php
+msgid "https://jurajhamara.sk"
+msgstr "https://jurajhamara.sk"
+
+#: includes/class-meff-xlsx-writer.php:113
+#: includes/export.php:329
+#: includes/export.php:727
+msgid "A temporary file for the export could not be created."
+msgstr "Dočasný súbor pre export sa nepodarilo vytvoriť."
+
+#: includes/class-meff-xlsx-writer.php:190
+#: includes/class-meff-xlsx-writer.php:202
+msgid "The Excel file could not be created."
+msgstr "Súbor Excel sa nepodarilo vytvoriť."
+
+#: includes/class-meff-xlsx-writer.php:434
+#: includes/export.php:453
+msgid "The export could not be written to a temporary file. The server may be out of disk space."
+msgstr "Export sa nepodarilo zapísať do dočasného súboru. Na serveri možno chýba miesto na disku."
+
+#: includes/export.php:291
+msgid "The Excel file cannot be created, because the zip extension of PHP is missing on this server. Ask your hosting provider to enable it."
+msgstr "Súbor Excel sa nedá vytvoriť, lebo na tomto serveri chýba rozšírenie PHP zip. Požiadajte poskytovateľa hostingu, aby ho zapol."
+
+#: includes/export.php:316
+#: message-export-for-flamingo.php:371
+msgid "Select at least one form."
+msgstr "Vyberte aspoň jeden formulár."
+
+#: includes/export.php:380
+msgctxt "value of a consent column"
+msgid "Yes"
+msgstr "Áno"
+
+#: includes/export.php:469
+#: message-export-for-flamingo.php:373
+msgid "No messages match the selected filters."
+msgstr "Vybraným filtrom nezodpovedá žiadna správa."
+
+#: includes/export.php:648
+msgctxt "value of the spam column"
+msgid "Yes"
+msgstr "Áno"
+
+#: includes/export.php:658
+#: includes/export.php:763
+msgctxt "column header"
+msgid "Date"
+msgstr "Dátum"
+
+#: includes/export.php:665
+msgctxt "column header"
+msgid "Form"
+msgstr "Formulár"
+
+#: includes/export.php:669
+msgctxt "column header"
+msgid "Spam"
+msgstr "Spam"
+
+#: includes/export.php:717
+msgctxt "sheet name"
+msgid "Messages"
+msgstr "Správy"
+
+#: message-export-for-flamingo.php:71
+msgid "Message Export for Flamingo needs the Flamingo plugin. Install and activate Flamingo to export messages."
+msgstr "Message Export for Flamingo potrebuje plugin Flamingo. Na export správ nainštalujte a aktivujte Flamingo."
+
+#: message-export-for-flamingo.php:176
+msgid "All time"
+msgstr "Celé obdobie"
+
+#. translators: %s: Month and year, for example October 2026.
+#: message-export-for-flamingo.php:182
+#, php-format
+msgid "This month (%s)"
+msgstr "Tento mesiac (%s)"
+
+#. translators: %s: Month and year, for example September 2026.
+#: message-export-for-flamingo.php:188
+#, php-format
+msgid "Last month (%s)"
+msgstr "Minulý mesiac (%s)"
+
+#. translators: %s: Year, for example 2026.
+#: message-export-for-flamingo.php:194
+#, php-format
+msgid "This year (%s)"
+msgstr "Tento rok (%s)"
+
+#: message-export-for-flamingo.php:199
+msgid "Custom range"
+msgstr "Vlastný rozsah"
+
+#. translators: %s: Number of messages.
+#: message-export-for-flamingo.php:380
+#, php-format
+msgid "Download Excel (%s message)"
+msgid_plural "Download Excel (%s messages)"
+msgstr[0] "Stiahnuť Excel (%s správa)"
+msgstr[1] "Stiahnuť Excel (%s správy)"
+msgstr[2] "Stiahnuť Excel (%s správ)"
+
+#: message-export-for-flamingo.php:401
+#: message-export-for-flamingo.php:602
+msgid "Export Messages"
+msgstr "Export správ"
+
+#: message-export-for-flamingo.php:402
+msgid "Export"
+msgstr "Export"
+
+#: message-export-for-flamingo.php:465
+msgid "There are no messages in Flamingo yet. They will appear here after someone sends one of your forms."
+msgstr "Vo Flamingu zatiaľ nie sú žiadne správy. Objavia sa tu, keď niekto odošle niektorý z vašich formulárov."
+
+#: message-export-for-flamingo.php:474
+msgid "Choose which messages to download. The Excel file has one row for each message."
+msgstr "Vyberte, ktoré správy chcete stiahnuť. Súbor Excel má pre každú správu jeden riadok."
+
+#: message-export-for-flamingo.php:478
+msgid "The number of messages could not be updated. Reload the page and try again."
+msgstr "Počet správ sa nepodarilo aktualizovať. Načítajte stránku znova a skúste to ešte raz."
+
+#: message-export-for-flamingo.php:484
+#: message-export-for-flamingo.php:487
+msgid "Forms"
+msgstr "Formuláre"
+
+#: message-export-for-flamingo.php:499
+#: message-export-for-flamingo.php:502
+msgid "Period"
+msgstr "Obdobie"
+
+#: message-export-for-flamingo.php:511
+msgctxt "start of a date range"
+msgid "from"
+msgstr "od"
+
+#: message-export-for-flamingo.php:515
+msgctxt "end of a date range"
+msgid "to"
+msgstr "do"
+
+#: message-export-for-flamingo.php:528
+msgid "More options"
+msgstr "Ďalšie možnosti"
+
+#: message-export-for-flamingo.php:531
+msgid "Sender e-mail"
+msgstr "E-mail odosielateľa"
+
+#: message-export-for-flamingo.php:534
+msgid "The whole address or a part of it, for example @gmail.com."
+msgstr "Celá adresa alebo jej časť, napríklad @gmail.com."
+
+#: message-export-for-flamingo.php:538
+msgid "Text"
+msgstr "Text"
+
+#: message-export-for-flamingo.php:541
+msgid "Only messages that contain all of these words, anywhere in the message."
+msgstr "Len správy, ktoré obsahujú všetky tieto slová, kdekoľvek v správe."
+
+#: message-export-for-flamingo.php:545
+msgid "Spam"
+msgstr "Spam"
+
+#: message-export-for-flamingo.php:549
+msgid "Also include messages marked as spam"
+msgstr "Zahrnúť aj správy označené ako spam"
+
+#: message-export-for-flamingo.php:594
+msgid "Sorry, you are not allowed to export messages."
+msgstr "Na export správ nemáte oprávnenie."
