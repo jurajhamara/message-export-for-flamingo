@@ -28,6 +28,24 @@ require_once __DIR__ . '/includes/class-meff-xlsx-writer.php';
 require_once __DIR__ . '/includes/export.php';
 
 /* -------------------------------------------------------------------------
+ * Translations
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Register the translations bundled in languages/.
+ *
+ * WordPress 6.8 and later register the Domain Path of active plugins on
+ * their own, WordPress 6.7 does not. This only tells WordPress where to
+ * look: the file is loaded with the first translated text, and language
+ * packs from translate.wordpress.org still take precedence.
+ */
+function meff_load_textdomain() {
+	// phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound -- Needed for the bundled translations on WordPress 6.7.
+	load_plugin_textdomain( 'message-export-for-flamingo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+add_action( 'init', 'meff_load_textdomain' );
+
+/* -------------------------------------------------------------------------
  * Flamingo check
  * ---------------------------------------------------------------------- */
 
