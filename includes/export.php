@@ -447,9 +447,11 @@ function meff_collect_rows( $filters, $forms, $rows ) {
 			meff_merge_field_order( $found['fields'][ $term_id ], $keys );
 
 			$line = wp_json_encode( array( $post->post_date, $term_id, $spam, (object) $values ), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES );
+			$line = false === $line ? false : $line . "\n";
 
+			// A full disk can stop the write partway, without returning false.
 			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite -- See meff_create_export().
-			if ( false === $line || false === fwrite( $rows, $line . "\n" ) ) {
+			if ( false === $line || strlen( $line ) !== fwrite( $rows, $line ) ) {
 				return new WP_Error( 'meff_temp_file', __( 'The export could not be written to a temporary file. The server may be out of disk space.', 'message-export-for-flamingo' ) );
 			}
 

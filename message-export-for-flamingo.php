@@ -78,9 +78,14 @@ add_action( 'plugins_loaded', 'meff_init' );
 
 /**
  * Tell users who can manage plugins that Flamingo is missing.
+ *
+ * Only on the Plugins screen, where WordPress lists missing dependencies
+ * too, not on every admin page.
  */
 function meff_notice_missing_flamingo() {
-	if ( ! current_user_can( 'activate_plugins' ) ) {
+	$screen = get_current_screen();
+
+	if ( ! current_user_can( 'activate_plugins' ) || ! $screen || 'plugins' !== $screen->id ) {
 		return;
 	}
 

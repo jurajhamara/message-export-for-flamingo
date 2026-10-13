@@ -429,8 +429,9 @@ class MEFF_Xlsx_Writer {
 	 * @return true|WP_Error
 	 */
 	private function flush() {
+		// A full disk can stop the write partway, without returning false.
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite -- See open().
-		if ( false === fwrite( $this->handle, $this->buffer ) ) {
+		if ( strlen( $this->buffer ) !== fwrite( $this->handle, $this->buffer ) ) {
 			return new WP_Error( 'meff_temp_file', __( 'The export could not be written to a temporary file. The server may be out of disk space.', 'message-export-for-flamingo' ) );
 		}
 
