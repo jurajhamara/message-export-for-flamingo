@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-13T10:39:24+00:00\n"
+"POT-Creation-Date: 2026-10-13T10:58:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: message-export-for-flamingo\n"
@@ -55,7 +55,7 @@ msgid "The Excel file cannot be created, because the zip extension of PHP is mis
 msgstr ""
 
 #: includes/export.php:316
-#: message-export-for-flamingo.php:389
+#: message-export-for-flamingo.php:388
 msgid "Select at least one form."
 msgstr ""
 
@@ -65,7 +65,7 @@ msgid "Yes"
 msgstr ""
 
 #: includes/export.php:469
-#: message-export-for-flamingo.php:391
+#: message-export-for-flamingo.php:390
 msgid "No messages match the selected filters."
 msgstr ""
 
@@ -95,113 +95,113 @@ msgctxt "sheet name"
 msgid "Messages"
 msgstr ""
 
-#: message-export-for-flamingo.php:89
+#: message-export-for-flamingo.php:88
 msgid "Message Export for Flamingo needs the Flamingo plugin. Install and activate Flamingo to export messages."
 msgstr ""
 
-#: message-export-for-flamingo.php:194
+#: message-export-for-flamingo.php:193
 msgid "All time"
 msgstr ""
 
 #. translators: %s: Month and year, for example October 2026.
-#: message-export-for-flamingo.php:200
+#: message-export-for-flamingo.php:199
 #, php-format
 msgid "This month (%s)"
 msgstr ""
 
 #. translators: %s: Month and year, for example September 2026.
-#: message-export-for-flamingo.php:206
+#: message-export-for-flamingo.php:205
 #, php-format
 msgid "Last month (%s)"
 msgstr ""
 
 #. translators: %s: Year, for example 2026.
-#: message-export-for-flamingo.php:212
+#: message-export-for-flamingo.php:211
 #, php-format
 msgid "This year (%s)"
 msgstr ""
 
-#: message-export-for-flamingo.php:217
+#: message-export-for-flamingo.php:216
 msgid "Custom range"
 msgstr ""
 
 #. translators: %s: Number of messages.
-#: message-export-for-flamingo.php:398
+#: message-export-for-flamingo.php:397
 #, php-format
 msgid "Download Excel (%s message)"
 msgid_plural "Download Excel (%s messages)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: message-export-for-flamingo.php:419
-#: message-export-for-flamingo.php:620
+#: message-export-for-flamingo.php:418
+#: message-export-for-flamingo.php:619
 msgid "Export Messages"
 msgstr ""
 
-#: message-export-for-flamingo.php:420
+#: message-export-for-flamingo.php:419
 msgid "Export"
 msgstr ""
 
-#: message-export-for-flamingo.php:483
+#: message-export-for-flamingo.php:482
 msgid "There are no messages in Flamingo yet. They will appear here after someone sends one of your forms."
 msgstr ""
 
-#: message-export-for-flamingo.php:492
+#: message-export-for-flamingo.php:491
 msgid "Choose which messages to download. The Excel file has one row for each message."
 msgstr ""
 
-#: message-export-for-flamingo.php:496
+#: message-export-for-flamingo.php:495
 msgid "The number of messages could not be updated. Reload the page and try again."
 msgstr ""
 
-#: message-export-for-flamingo.php:502
-#: message-export-for-flamingo.php:505
+#: message-export-for-flamingo.php:501
+#: message-export-for-flamingo.php:504
 msgid "Forms"
 msgstr ""
 
-#: message-export-for-flamingo.php:517
-#: message-export-for-flamingo.php:520
+#: message-export-for-flamingo.php:516
+#: message-export-for-flamingo.php:519
 msgid "Period"
 msgstr ""
 
-#: message-export-for-flamingo.php:529
+#: message-export-for-flamingo.php:528
 msgctxt "start of a date range"
 msgid "from"
 msgstr ""
 
-#: message-export-for-flamingo.php:533
+#: message-export-for-flamingo.php:532
 msgctxt "end of a date range"
 msgid "to"
 msgstr ""
 
-#: message-export-for-flamingo.php:546
+#: message-export-for-flamingo.php:545
 msgid "More options"
 msgstr ""
 
-#: message-export-for-flamingo.php:549
+#: message-export-for-flamingo.php:548
 msgid "Sender e-mail"
 msgstr ""
 
-#: message-export-for-flamingo.php:552
+#: message-export-for-flamingo.php:551
 msgid "The whole address or a part of it, for example @gmail.com."
 msgstr ""
 
-#: message-export-for-flamingo.php:556
+#: message-export-for-flamingo.php:555
 msgid "Text"
 msgstr ""
 
-#: message-export-for-flamingo.php:559
+#: message-export-for-flamingo.php:558
 msgid "Only messages that contain all of these words, anywhere in the message."
 msgstr ""
 
-#: message-export-for-flamingo.php:563
+#: message-export-for-flamingo.php:562
 msgid "Spam"
 msgstr ""
 
-#: message-export-for-flamingo.php:567
+#: message-export-for-flamingo.php:566
 msgid "Also include messages marked as spam"
 msgstr ""
 
-#: message-export-for-flamingo.php:612
+#: message-export-for-flamingo.php:611
 msgid "Sorry, you are not allowed to export messages."
 msgstr ""
