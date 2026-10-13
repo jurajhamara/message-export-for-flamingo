@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Message Export for Flamingo 0.1.0\n"
+"Project-Id-Version: Message Export for Flamingo 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/message-export-for-flamingo\n"
 "Last-Translator: Juraj Hamara <mail@jurajhamara.sk>\n"
 "Language-Team: Juraj Hamara <mail@jurajhamara.sk>\n"
