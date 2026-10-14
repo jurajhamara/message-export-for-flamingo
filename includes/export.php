@@ -288,7 +288,7 @@ function meff_ignored_fields() {
  * @return string
  */
 function meff_no_zip_message() {
-	return __( 'The Excel file cannot be created, because the zip extension of PHP is missing on this server. Ask your hosting provider to enable it.', 'message-export-for-flamingo' );
+	return __( 'The Excel file cannot be created, because the zip extension of PHP is missing on this server. Ask your hosting provider to enable it.', 'form-message-export-by-juraj-hamara' );
 }
 
 /**
@@ -313,7 +313,7 @@ function meff_create_export( $filters ) {
 
 	// Without a channel, the query would not be limited to any and match every message.
 	if ( empty( $filters['channels'] ) ) {
-		return new WP_Error( 'meff_no_messages', __( 'Select at least one form.', 'message-export-for-flamingo' ) );
+		return new WP_Error( 'meff_no_messages', __( 'Select at least one form.', 'form-message-export-by-juraj-hamara' ) );
 	}
 
 	$rows_path = wp_tempnam( 'meff-rows' );
@@ -326,7 +326,7 @@ function meff_create_export( $filters ) {
 			wp_delete_file( $rows_path );
 		}
 
-		return new WP_Error( 'meff_temp_file', __( 'A temporary file for the export could not be created.', 'message-export-for-flamingo' ) );
+		return new WP_Error( 'meff_temp_file', __( 'A temporary file for the export could not be created.', 'form-message-export-by-juraj-hamara' ) );
 	}
 
 	$forms = array();
@@ -377,7 +377,7 @@ function meff_collect_rows( $filters, $forms, $rows ) {
 	);
 
 	$ignored = meff_ignored_fields();
-	$yes     = _x( 'Yes', 'value of a consent column', 'message-export-for-flamingo' );
+	$yes     = _x( 'Yes', 'value of a consent column', 'form-message-export-by-juraj-hamara' );
 	$batch   = 500;
 	$args    = meff_query_args( $filters );
 
@@ -452,7 +452,7 @@ function meff_collect_rows( $filters, $forms, $rows ) {
 			// A full disk can stop the write partway, without returning false.
 			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite -- See meff_create_export().
 			if ( false === $line || strlen( $line ) !== fwrite( $rows, $line ) ) {
-				return new WP_Error( 'meff_temp_file', __( 'The export could not be written to a temporary file. The server may be out of disk space.', 'message-export-for-flamingo' ) );
+				return new WP_Error( 'meff_temp_file', __( 'The export could not be written to a temporary file. The server may be out of disk space.', 'form-message-export-by-juraj-hamara' ) );
 			}
 
 			++$found['count'];
@@ -468,7 +468,7 @@ function meff_collect_rows( $filters, $forms, $rows ) {
 	} while ( count( $messages ) === $batch );
 
 	if ( ! $found['count'] ) {
-		return new WP_Error( 'meff_no_messages', __( 'No messages match the selected filters.', 'message-export-for-flamingo' ) );
+		return new WP_Error( 'meff_no_messages', __( 'No messages match the selected filters.', 'form-message-export-by-juraj-hamara' ) );
 	}
 
 	// Forms in the order of the Export page, not in the order of their first message.
@@ -647,7 +647,7 @@ function meff_write_export( $found, $forms, $rows ) {
 	$show_form = count( $found['fields'] ) > 1;
 	$show_spam = $found['spam'] > 0;
 	$fields    = meff_field_columns( $found, $forms );
-	$yes       = _x( 'Yes', 'value of the spam column', 'message-export-for-flamingo' );
+	$yes       = _x( 'Yes', 'value of the spam column', 'form-message-export-by-juraj-hamara' );
 	$date      = meff_date_format();
 
 	// WordPress stores term names with HTML entities, like &amp; for &.
@@ -657,18 +657,18 @@ function meff_write_export( $found, $forms, $rows ) {
 
 	$columns = array(
 		array(
-			'label' => _x( 'Date', 'column header', 'message-export-for-flamingo' ),
+			'label' => _x( 'Date', 'column header', 'form-message-export-by-juraj-hamara' ),
 			'type'  => 'date',
 			'width' => $date['width'],
 		),
 	);
 
 	if ( $show_form ) {
-		$columns[] = meff_text_column( _x( 'Form', 'column header', 'message-export-for-flamingo' ), max( array_map( 'mb_strlen', $names ) ) );
+		$columns[] = meff_text_column( _x( 'Form', 'column header', 'form-message-export-by-juraj-hamara' ), max( array_map( 'mb_strlen', $names ) ) );
 	}
 
 	if ( $show_spam ) {
-		$columns[] = meff_text_column( _x( 'Spam', 'column header', 'message-export-for-flamingo' ), 0 );
+		$columns[] = meff_text_column( _x( 'Spam', 'column header', 'form-message-export-by-juraj-hamara' ), 0 );
 	}
 
 	foreach ( $fields as $column ) {
@@ -716,7 +716,7 @@ function meff_write_export( $found, $forms, $rows ) {
 	$path = true === $result ? wp_tempnam( 'meff-export' ) : '';
 
 	if ( $path ) {
-		$result = $writer->save( _x( 'Messages', 'sheet name', 'message-export-for-flamingo' ), $path );
+		$result = $writer->save( _x( 'Messages', 'sheet name', 'form-message-export-by-juraj-hamara' ), $path );
 	}
 
 	$writer->cleanup();
@@ -726,7 +726,7 @@ function meff_write_export( $found, $forms, $rows ) {
 			wp_delete_file( $path );
 		}
 
-		return is_wp_error( $result ) ? $result : new WP_Error( 'meff_temp_file', __( 'A temporary file for the export could not be created.', 'message-export-for-flamingo' ) );
+		return is_wp_error( $result ) ? $result : new WP_Error( 'meff_temp_file', __( 'A temporary file for the export could not be created.', 'form-message-export-by-juraj-hamara' ) );
 	}
 
 	return array(
@@ -762,7 +762,7 @@ function meff_date_format() {
 	// About three more characters for the filter button in the header.
 	return array(
 		'code'  => $code,
-		'width' => max( $width + 2, MEFF_Xlsx_Writer::text_width( _x( 'Date', 'column header', 'message-export-for-flamingo' ) ) + 4 ),
+		'width' => max( $width + 2, MEFF_Xlsx_Writer::text_width( _x( 'Date', 'column header', 'form-message-export-by-juraj-hamara' ) ) + 4 ),
 	);
 }
 

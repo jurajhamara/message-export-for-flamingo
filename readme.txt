@@ -1,4 +1,4 @@
-=== Message Export for Flamingo ===
+=== Form Message Export by Juraj Hamara ===
 Contributors: jurajj
 Donate link: https://www.paypal.com/donate/?hosted_button_id=3JNS55YNAWDAY
 Tags: flamingo, contact form 7, export, excel, xlsx
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Export Contact Form 7 messages saved by Flamingo to an Excel file. Choose the forms and the period, get one readable row for each message.
+Export Flamingo messages from your Contact Form 7 forms to an Excel file. Choose the forms and the period, get one readable row for each message.
 
 == Description ==
 
@@ -55,7 +55,7 @@ Messages from forms usually contain personal data. The plugin does not send them
 == Installation ==
 
 1. Install and activate Flamingo, if you do not have it yet. Flamingo saves messages from the moment it is active, older messages cannot be exported.
-2. Install this plugin from the Plugins screen in your WordPress admin, or upload the `message-export-for-flamingo` folder to `/wp-content/plugins/`.
+2. Install this plugin from the Plugins screen in your WordPress admin, or upload the `form-message-export-by-juraj-hamara` folder to `/wp-content/plugins/`.
 3. Activate the plugin.
 4. Go to Flamingo > Export.
 

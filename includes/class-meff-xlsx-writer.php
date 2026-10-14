@@ -110,7 +110,7 @@ class MEFF_Xlsx_Writer {
 			$this->handle = null;
 			$this->cleanup();
 
-			return new WP_Error( 'meff_temp_file', __( 'A temporary file for the export could not be created.', 'message-export-for-flamingo' ) );
+			return new WP_Error( 'meff_temp_file', __( 'A temporary file for the export could not be created.', 'form-message-export-by-juraj-hamara' ) );
 		}
 
 		$cols = '';
@@ -187,7 +187,7 @@ class MEFF_Xlsx_Writer {
 		$zip = new ZipArchive();
 
 		if ( true !== $zip->open( $path, ZipArchive::CREATE | ZipArchive::OVERWRITE ) ) {
-			return new WP_Error( 'meff_zip', __( 'The Excel file could not be created.', 'message-export-for-flamingo' ) );
+			return new WP_Error( 'meff_zip', __( 'The Excel file could not be created.', 'form-message-export-by-juraj-hamara' ) );
 		}
 
 		$zip->addFromString( '[Content_Types].xml', self::content_types_xml() );
@@ -199,7 +199,7 @@ class MEFF_Xlsx_Writer {
 
 		// The sheet file is read only now, so it may be deleted only after this.
 		if ( ! $zip->close() ) {
-			return new WP_Error( 'meff_zip', __( 'The Excel file could not be created.', 'message-export-for-flamingo' ) );
+			return new WP_Error( 'meff_zip', __( 'The Excel file could not be created.', 'form-message-export-by-juraj-hamara' ) );
 		}
 
 		$this->cleanup();
@@ -432,7 +432,7 @@ class MEFF_Xlsx_Writer {
 		// A full disk can stop the write partway, without returning false.
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite -- See open().
 		if ( strlen( $this->buffer ) !== fwrite( $this->handle, $this->buffer ) ) {
-			return new WP_Error( 'meff_temp_file', __( 'The export could not be written to a temporary file. The server may be out of disk space.', 'message-export-for-flamingo' ) );
+			return new WP_Error( 'meff_temp_file', __( 'The export could not be written to a temporary file. The server may be out of disk space.', 'form-message-export-by-juraj-hamara' ) );
 		}
 
 		$this->buffer = '';

@@ -20,4 +20,4 @@ jobs:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           # Repo sa volá rovnako ako slug, uvedené aj tak, keby sa repo premenovalo.
-          SLUG: message-export-for-flamingo
+          SLUG: form-message-export-by-juraj-hamara

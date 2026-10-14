@@ -1,4 +1,4 @@
-# Message Export for Flamingo
+# Form Message Export by Juraj Hamara
 
 A WordPress plugin that exports Contact Form 7 messages saved by Flamingo to
 an Excel file (.xlsx). Choose the forms and the period, get one readable row
@@ -41,15 +41,15 @@ has no settings and saves nothing in the database.
 3. Open Flamingo > Export.
 
 When zipping for a manual install, the plugin must sit inside a folder named
-`message-export-for-flamingo`, the WordPress.org slug.
+`form-message-export-by-juraj-hamara`, the WordPress.org slug.
 
 ## Repository layout
 
 The plugin files live at the repository root so the deploy workflow can push
 them straight to the WordPress.org SVN trunk.
 
-- `message-export-for-flamingo.php` - main file: dependency check, filters,
-  Export page, download
+- `form-message-export-by-juraj-hamara.php` - main file: dependency check,
+  filters, Export page, download
 - `includes/export.php` - reading messages, field labels, columns
 - `includes/class-meff-xlsx-writer.php` - the .xlsx writer, knows nothing
   about Flamingo
@@ -65,8 +65,8 @@ them straight to the WordPress.org SVN trunk.
 ## Releasing
 
 1. Bump the version in three places, all must match: the `Version:` header in
-   `message-export-for-flamingo.php`, `Stable tag:` in `readme.txt`, and the
-   git tag (for example `1.0.0`, with no `v` prefix).
+   `form-message-export-by-juraj-hamara.php`, `Stable tag:` in `readme.txt`,
+   and the git tag (for example `1.0.0`, with no `v` prefix).
 2. Update `Tested up to:` in both files once verified against the latest
    WordPress release.
 3. Commit, then create and push the tag. The GitHub Action deploys to the

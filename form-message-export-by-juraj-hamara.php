@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Message Export for Flamingo
+ * Plugin Name:       Form Message Export by Juraj Hamara
  * Description:       Export Contact Form 7 messages stored by Flamingo to an Excel file, filtered by form, date range, sender e-mail and text.
  * Version:           1.0.0
  * Requires at least: 6.7
@@ -10,7 +10,7 @@
  * Author URI:        https://jurajhamara.sk
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       message-export-for-flamingo
+ * Text Domain:       form-message-export-by-juraj-hamara
  * Domain Path:       /languages
  */
 
@@ -40,7 +40,7 @@ require_once __DIR__ . '/includes/export.php';
  */
 function meff_load_textdomain() {
 	// phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound -- Needed for the bundled translations on WordPress 6.7.
-	load_plugin_textdomain( 'message-export-for-flamingo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'form-message-export-by-juraj-hamara', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'init', 'meff_load_textdomain' );
 
@@ -90,7 +90,7 @@ function meff_notice_missing_flamingo() {
 	}
 
 	wp_admin_notice(
-		esc_html__( 'Message Export for Flamingo needs the Flamingo plugin. Install and activate Flamingo to export messages.', 'message-export-for-flamingo' ),
+		esc_html__( 'Form Message Export by Juraj Hamara needs the Flamingo plugin. Install and activate Flamingo to export messages.', 'form-message-export-by-juraj-hamara' ),
 		array( 'type' => 'error' )
 	);
 }
@@ -195,30 +195,30 @@ function meff_get_periods() {
 
 	return array(
 		'all'        => array(
-			'label' => __( 'All time', 'message-export-for-flamingo' ),
+			'label' => __( 'All time', 'form-message-export-by-juraj-hamara' ),
 			'from'  => '',
 			'to'    => '',
 		),
 		'this-month' => array(
 			/* translators: %s: Month and year, for example October 2026. */
-			'label' => sprintf( __( 'This month (%s)', 'message-export-for-flamingo' ), wp_date( 'F Y', $today->getTimestamp() ) ),
+			'label' => sprintf( __( 'This month (%s)', 'form-message-export-by-juraj-hamara' ), wp_date( 'F Y', $today->getTimestamp() ) ),
 			'from'  => $today->format( 'Y-m-01' ),
 			'to'    => $today->format( 'Y-m-t' ),
 		),
 		'last-month' => array(
 			/* translators: %s: Month and year, for example September 2026. */
-			'label' => sprintf( __( 'Last month (%s)', 'message-export-for-flamingo' ), wp_date( 'F Y', $last_month->getTimestamp() ) ),
+			'label' => sprintf( __( 'Last month (%s)', 'form-message-export-by-juraj-hamara' ), wp_date( 'F Y', $last_month->getTimestamp() ) ),
 			'from'  => $last_month->format( 'Y-m-01' ),
 			'to'    => $last_month->format( 'Y-m-t' ),
 		),
 		'this-year'  => array(
 			/* translators: %s: Year, for example 2026. */
-			'label' => sprintf( __( 'This year (%s)', 'message-export-for-flamingo' ), $today->format( 'Y' ) ),
+			'label' => sprintf( __( 'This year (%s)', 'form-message-export-by-juraj-hamara' ), $today->format( 'Y' ) ),
 			'from'  => $today->format( 'Y-01-01' ),
 			'to'    => $today->format( 'Y-12-31' ),
 		),
 		'custom'     => array(
-			'label' => __( 'Custom range', 'message-export-for-flamingo' ),
+			'label' => __( 'Custom range', 'form-message-export-by-juraj-hamara' ),
 			'from'  => '',
 			'to'    => '',
 		),
@@ -390,16 +390,16 @@ function meff_button_state( $filters, $count ) {
 	$note = '';
 
 	if ( empty( $filters['channels'] ) ) {
-		$note = __( 'Select at least one form.', 'message-export-for-flamingo' );
+		$note = __( 'Select at least one form.', 'form-message-export-by-juraj-hamara' );
 	} elseif ( ! $count ) {
-		$note = __( 'No messages match the selected filters.', 'message-export-for-flamingo' );
+		$note = __( 'No messages match the selected filters.', 'form-message-export-by-juraj-hamara' );
 	}
 
 	return array(
 		'count' => $count,
 		'label' => sprintf(
 			/* translators: %s: Number of messages. */
-			_n( 'Download Excel (%s message)', 'Download Excel (%s messages)', $count, 'message-export-for-flamingo' ),
+			_n( 'Download Excel (%s message)', 'Download Excel (%s messages)', $count, 'form-message-export-by-juraj-hamara' ),
 			html_entity_decode( number_format_i18n( $count ), ENT_QUOTES, 'UTF-8' )
 		),
 		'note'  => $note,
@@ -420,10 +420,10 @@ function meff_button_state( $filters, $count ) {
 function meff_admin_menu() {
 	$hook = add_submenu_page(
 		'flamingo',
-		__( 'Export Messages', 'message-export-for-flamingo' ),
-		__( 'Export', 'message-export-for-flamingo' ),
+		__( 'Export Messages', 'form-message-export-by-juraj-hamara' ),
+		__( 'Export', 'form-message-export-by-juraj-hamara' ),
 		'flamingo_edit_inbound_messages',
-		'message-export-for-flamingo',
+		'form-message-export-by-juraj-hamara',
 		'meff_export_page'
 	);
 
@@ -484,7 +484,7 @@ function meff_export_page() {
 
 	if ( ! $channels ) {
 		?>
-		<p><?php esc_html_e( 'There are no messages in Flamingo yet. They will appear here after someone sends one of your forms.', 'message-export-for-flamingo' ); ?></p>
+		<p><?php esc_html_e( 'There are no messages in Flamingo yet. They will appear here after someone sends one of your forms.', 'form-message-export-by-juraj-hamara' ); ?></p>
 	</div>
 		<?php
 		return;
@@ -493,20 +493,20 @@ function meff_export_page() {
 	$filters = meff_default_filters();
 	$state   = meff_button_state( $filters, meff_count_messages( $filters ) );
 	?>
-		<p><?php esc_html_e( 'Choose which messages to download. The Excel file has one row for each message.', 'message-export-for-flamingo' ); ?></p>
+		<p><?php esc_html_e( 'Choose which messages to download. The Excel file has one row for each message.', 'form-message-export-by-juraj-hamara' ); ?></p>
 
 		<form id="meff-export-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>"
 			data-count-url="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>"
-			data-error="<?php esc_attr_e( 'The number of messages could not be updated. Reload the page and try again.', 'message-export-for-flamingo' ); ?>">
+			data-error="<?php esc_attr_e( 'The number of messages could not be updated. Reload the page and try again.', 'form-message-export-by-juraj-hamara' ); ?>">
 			<input type="hidden" name="action" value="meff_download">
 			<?php wp_nonce_field( 'meff_export' ); ?>
 
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Forms', 'message-export-for-flamingo' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Forms', 'form-message-export-by-juraj-hamara' ); ?></th>
 					<td>
 						<fieldset>
-							<legend class="screen-reader-text"><?php esc_html_e( 'Forms', 'message-export-for-flamingo' ); ?></legend>
+							<legend class="screen-reader-text"><?php esc_html_e( 'Forms', 'form-message-export-by-juraj-hamara' ); ?></legend>
 							<?php foreach ( $channels as $term_id => $channel ) : ?>
 								<label>
 									<input type="checkbox" name="meff_channels[]" value="<?php echo esc_attr( $term_id ); ?>" <?php checked( in_array( $term_id, $filters['channels'], true ) ); ?>>
@@ -518,10 +518,10 @@ function meff_export_page() {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Period', 'message-export-for-flamingo' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Period', 'form-message-export-by-juraj-hamara' ); ?></th>
 					<td>
 						<fieldset>
-							<legend class="screen-reader-text"><?php esc_html_e( 'Period', 'message-export-for-flamingo' ); ?></legend>
+							<legend class="screen-reader-text"><?php esc_html_e( 'Period', 'form-message-export-by-juraj-hamara' ); ?></legend>
 							<?php foreach ( meff_get_periods() as $key => $period ) : ?>
 								<label>
 									<input type="radio" name="meff_period" value="<?php echo esc_attr( $key ); ?>" <?php checked( $filters['period'], $key ); ?>>
@@ -530,11 +530,11 @@ function meff_export_page() {
 								<?php if ( 'custom' === $key ) : ?>
 									<span class="meff-dates">
 										<span class="meff-date">
-											<label for="meff-from"><?php echo esc_html_x( 'from', 'start of a date range', 'message-export-for-flamingo' ); ?></label>
+											<label for="meff-from"><?php echo esc_html_x( 'from', 'start of a date range', 'form-message-export-by-juraj-hamara' ); ?></label>
 											<input type="date" id="meff-from" name="meff_from">
 										</span>
 										<span class="meff-date">
-											<label for="meff-to"><?php echo esc_html_x( 'to', 'end of a date range', 'message-export-for-flamingo' ); ?></label>
+											<label for="meff-to"><?php echo esc_html_x( 'to', 'end of a date range', 'form-message-export-by-juraj-hamara' ); ?></label>
 											<input type="date" id="meff-to" name="meff_to">
 										</span>
 									</span>
@@ -547,28 +547,28 @@ function meff_export_page() {
 			</table>
 
 			<details class="meff-more">
-				<summary><?php esc_html_e( 'More options', 'message-export-for-flamingo' ); ?></summary>
+				<summary><?php esc_html_e( 'More options', 'form-message-export-by-juraj-hamara' ); ?></summary>
 				<table class="form-table" role="presentation">
 					<tr>
-						<th scope="row"><label for="meff-email"><?php esc_html_e( 'Sender e-mail', 'message-export-for-flamingo' ); ?></label></th>
+						<th scope="row"><label for="meff-email"><?php esc_html_e( 'Sender e-mail', 'form-message-export-by-juraj-hamara' ); ?></label></th>
 						<td>
 							<input type="text" id="meff-email" name="meff_email" class="regular-text" inputmode="email" autocomplete="off" spellcheck="false" aria-describedby="meff-email-description">
-							<p class="description" id="meff-email-description"><?php esc_html_e( 'The whole address or a part of it, for example @gmail.com.', 'message-export-for-flamingo' ); ?></p>
+							<p class="description" id="meff-email-description"><?php esc_html_e( 'The whole address or a part of it, for example @gmail.com.', 'form-message-export-by-juraj-hamara' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="meff-search"><?php esc_html_e( 'Text', 'message-export-for-flamingo' ); ?></label></th>
+						<th scope="row"><label for="meff-search"><?php esc_html_e( 'Text', 'form-message-export-by-juraj-hamara' ); ?></label></th>
 						<td>
 							<input type="text" id="meff-search" name="meff_search" class="regular-text" autocomplete="off" aria-describedby="meff-search-description">
-							<p class="description" id="meff-search-description"><?php esc_html_e( 'Only messages that contain all of these words, anywhere in the message.', 'message-export-for-flamingo' ); ?></p>
+							<p class="description" id="meff-search-description"><?php esc_html_e( 'Only messages that contain all of these words, anywhere in the message.', 'form-message-export-by-juraj-hamara' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Spam', 'message-export-for-flamingo' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'Spam', 'form-message-export-by-juraj-hamara' ); ?></th>
 						<td>
 							<label>
 								<input type="checkbox" name="meff_spam" value="1">
-								<?php esc_html_e( 'Also include messages marked as spam', 'message-export-for-flamingo' ); ?>
+								<?php esc_html_e( 'Also include messages marked as spam', 'form-message-export-by-juraj-hamara' ); ?>
 							</label>
 						</td>
 					</tr>
@@ -613,7 +613,7 @@ function meff_download() {
 	check_admin_referer( 'meff_export' );
 
 	if ( ! current_user_can( 'flamingo_edit_inbound_messages' ) ) {
-		wp_die( esc_html__( 'Sorry, you are not allowed to export messages.', 'message-export-for-flamingo' ), 403 );
+		wp_die( esc_html__( 'Sorry, you are not allowed to export messages.', 'form-message-export-by-juraj-hamara' ), 403 );
 	}
 
 	$export = meff_create_export( meff_get_submitted_filters() );
@@ -621,7 +621,7 @@ function meff_download() {
 	if ( is_wp_error( $export ) ) {
 		wp_die(
 			esc_html( $export->get_error_message() ),
-			esc_html__( 'Export Messages', 'message-export-for-flamingo' ),
+			esc_html__( 'Export Messages', 'form-message-export-by-juraj-hamara' ),
 			array(
 				'response'  => 'meff_no_messages' === $export->get_error_code() ? 200 : 500,
 				'back_link' => true,
